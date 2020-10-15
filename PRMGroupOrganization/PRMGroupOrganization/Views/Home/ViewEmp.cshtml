@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "ViewEmp";
+}
+
+    <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function () {
+            $("#adddept").click(function () {
+                var input = document.getElementById('deptbtn').value;
+                if (input == null || input == undefined || input == "") {
+                    alert('empid cant be empty');
+                }
+                else {
+                    window.location.href = "/Home/ViewEmp1?empdetail="+input;
+                }
+                
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <br /><br />
+            <input type="text" id="deptbtn" />
+            <br /><br />
+            <button class="btn btn-primary" id="adddept" value="Get Employees">GET EMP</button><br /><br />
+        </div>
+    </body>
+    </html>
+

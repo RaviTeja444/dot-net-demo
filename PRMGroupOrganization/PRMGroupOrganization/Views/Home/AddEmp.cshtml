@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "AddEmp";
+}
+
+    <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function () {
+            $("#addemp").click(function () {
+                var input1 = document.getElementById('fullname').value;
+                var input2 = document.getElementById('dob').value;
+                var input3 = document.getElementById('exp').value;
+                var input4 = document.getElementById('design').value;
+                var input5 = document.getElementById('basicpay').value;
+                var input6 = document.getElementById('deptid').value;
+                var mydate = new Date(input2);
+                if (_calculateAge(mydate)<=21) {
+                    alert('Age should be greater than 21');
+                }
+                if (input4 != 'Employee' && input4 != 'Manager' && input4 != 'employee' && input4 != 'manager') {
+                    alert('designation should be either manager or employee');
+                }
+                if (input1 == null || input1 == undefined || input1 == "") {
+                    alert('full name cant be empty');
+                }
+                else {
+                     window.location.href = "/Home/AddEmp1?fullname="+input1+"&dob="+input2+"&exp="+input3+"&design="+input4+"&basicpay="+input5+"&deptid="+input6;
+                }
+               
+            });
+        });
+        function _calculateAge(birthday)
+        { // birthday is a date
+            var ageDifMs = Date.now() - birthday.getTime();
+            var ageDate = new Date(ageDifMs); // miliseconds from epoch
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+        </script>
+    </head>
+    <body>
+        
+        <div class="container">
+            <br /><br />
+            <input type="text" id="fullname" placeholder="Full Name" /> <br /><br />
+            <input type="date" id="dob" placeholder="DOB" /> <br /><br />
+            <input type="text" id="exp" placeholder="Experience" /> <br /><br />
+            <input type="text" id="design" placeholder="Designation" /> <br /><br />
+            <input type="text" id="basicpay" placeholder=" Basic Pay" /> <br /><br />
+            <input type="text" id="deptid" placeholder="Department ID" /> <br /><br />
+            <button class="btn btn-primary" id="addemp" value="Add Employee">Add</button><br /><br />
+        </div>
+          
+        
+
+    </body>
+    </html>
+

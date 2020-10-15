@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "RemoveEmp";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#delemp").click(function () {
+            var input1 = document.getElementById('empNo').value;
+            if (input1 == null || input1 == undefined || input1 == "") {
+                alert("please enter empNo");
+            }
+            else {
+                var s = "/Home/RemoveEmp1?empNo="+input1;
+                window.location.href = s;
+            }
+ 
+        });
+    });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <br /><br />
+        <input type="text" id="empNo" placeholder="EmpID" /><br /><br />
+        <button class="btn btn-primary" id="delemp" value="Edit Employee">EDIT</button><br /><br />
+    </div>
+
+
+</body>
+</html>
+

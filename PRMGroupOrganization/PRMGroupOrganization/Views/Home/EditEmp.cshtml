@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "EditEmp";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#editemp").click(function () {
+            var empno = document.getElementById('empNo11').value;
+            if (empno == null || empno == undefined || empno == "") {
+                alert("please enter empNo");
+            }
+            else {
+                var e = empno.toString();
+                window.location.href = "/Home/EditEmp1?empNo1="+e;
+            }
+            
+        });
+    });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <br /><br />
+        <input type="text" id="empNo11" placeholder="EmpID" />
+        <br /><br />
+        <button class="btn btn-primary" id="editemp" value="Edit Employee">EDIT</button><br /><br />
+    </div>
+
+
+</body>
+</html>
+

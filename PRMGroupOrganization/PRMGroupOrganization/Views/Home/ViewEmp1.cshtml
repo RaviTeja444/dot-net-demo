@@ -1,0 +1,38 @@
+﻿@model PRMGroupOrganization.Models.Employee
+@{
+    ViewBag.Title = "ViewEmp1";
+}
+
+<h2>Employee Details</h2>
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>DOB</th>
+                <th>Experience</th>
+                <th>Designation</th>
+                <th>Basic Pay</th>
+                <th>Department ID</th>
+                <th>Emp Id</th>
+                <th>Gross Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.FullName</td>
+                <td>@Model.DateOfBirth</td>
+                <td>@Model.Experience</td>
+                <td>@Model.Designation</td>
+                <td>@Model.BasicPay</td>
+                <td>@Model.DepartmentID</td>
+                <td>@Model.EmployeeID</td>
+                <td>@Model.GrossPay</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+}

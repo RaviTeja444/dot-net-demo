@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#dep").click(function () {
+                window.location.href = "/Home/AddDept";
+            });
+            $("#emp").click(function () {
+                window.location.href = "/Home/AddEmp";
+            });
+              $("#editemp").click(function () {
+                window.location.href = "/Home/EditEmp";
+              });
+              $("#remp").click(function () {
+                window.location.href = "/Home/RemoveEmp";
+              });
+             $("#vemp").click(function () {
+                window.location.href = "/Home/ViewEmp";
+              });
+              $("#stat").click(function () {
+                window.location.href = "/Home/Stats";
+              });
+              $("#alldep").click(function () {
+                window.location.href = "/Home/Departments";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <br /><br />
+        <button class="btn btn-primary" id="dep" value="Add Department">Add Department</button><br /><br />
+        <button class="btn btn-primary" id="emp" value="Add Employee">Add Employee</button><br /><br />
+        <button class="btn btn-primary" id="editemp" value="Edit Employee">Edit Employee</button><br /><br />
+        <button class="btn btn-primary" id="vemp" value="View Employee">View Employee</button><br /><br />
+        <button class="btn btn-primary" id="remp" value="Remove Employee">Remove Employee</button><br /><br />
+        <button class="btn btn-primary" id="stat" value="View Statistics">View Statistics</button><br /><br />
+        <button class="btn btn-primary" id="alldep" value="View All Department">View All Department</button><br /><br />
+    </div>
+</body>
+</html>
